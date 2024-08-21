@@ -1,5 +1,6 @@
-# Custom
-
+# Thumbnails
+._*
+.husky/_
 
 #Environments
 **.env
