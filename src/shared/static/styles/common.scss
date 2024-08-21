@@ -1,0 +1,18 @@
+@import 'null';
+
+body {
+	background-color: var(--dark);
+	color: var(--white);
+	font-size: 22px;
+	line-height: 32px;
+	font-family: 'Somic', sans-serif;
+}
+
+.wrapper {
+	min-height: 100vh;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
