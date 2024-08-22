@@ -1,30 +1,23 @@
-import React, {useEffect} from 'react'
-import useSWR from 'swr'
-import {AxiosResponse} from 'axios'
-import UserCard from '@/components/UserCard/UserCard.tsx'
-import {useUserStore} from '@/shared/store/store.ts'
-import Posts from '@/pages/Posts/Posts.tsx'
-import styles from './Main.module.scss'
+import React, { useEffect } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
 
+import Header from '@/components/Header/Header.tsx';
 
-function Main() {
-	const {users, getUsers} = useUserStore()
+import styles from './Main.module.scss';
 
-	useEffect(() => {
-		getUsers()
-	}, []);
+const Main = () => {
+  const navigate = useNavigate();
 
-	return <div className={styles.main}>
-		<div className={styles.section}>
-			<h3 className={styles.sectionTitle}>All Users</h3>
-			<div className={styles.users}>
-				{users.map(user => {
-					return <UserCard key={user.id} user={user} />
-				})}
-			</div>
-		</div>
-		<Posts />
-	</div>
-}
+  useEffect(() => {
+    navigate('/users');
+  }, []);
 
-export default Main
+  return (
+    <div className={styles.main}>
+      <Header />
+      <Outlet />
+    </div>
+  );
+};
+
+export default Main;

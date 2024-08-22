@@ -1,12 +1,13 @@
-import {Link} from 'react-router-dom'
-import styles from './NotFound.module.scss'
+import { Link } from 'react-router-dom';
 
-function NotFound() {
-	return (
-		<Link className={styles.notfound} to={'/'}>
-			Страница не найдена!
-		</Link>
-	)
-}
+import styles from './NotFound.module.scss';
 
-export default NotFound
+const NotFound = () => {
+  return (
+    <Link className={styles.notfound} to='/'>
+      Страница не найдена!
+    </Link>
+  );
+};
+
+export default NotFound;

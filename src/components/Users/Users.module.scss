@@ -1,6 +1,3 @@
-.posts {
-}
-
 .section {
 	max-width: $max-width + px;
 	margin: 0 auto;
@@ -14,16 +11,8 @@
 	margin-bottom: 30px;
 }
 
-.list {
-}
-
-.buttons {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	grid-gap: 20px;
-}
-
-.button {
-	margin-top: 20px;
+.users {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 30px;
 }
