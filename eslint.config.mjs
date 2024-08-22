@@ -1,32 +1,51 @@
-import {fixupConfigRules, fixupPluginRules} from '@eslint/compat';
 import js from '@eslint/js';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactJsx from 'eslint-plugin-react/configs/jsx-runtime.js';
-import react from 'eslint-plugin-react/configs/recommended.js';
-import globals from 'globals';
-import ts from 'typescript-eslint';
-
+import typescript from '@typescript-eslint/eslint-plugin';
+import typescriptParser from '@typescript-eslint/parser';
+import react from 'eslint-plugin-react';
 
 export default [
-    {languageOptions: {globals: globals.browser}},
     js.configs.recommended,
-    ...ts.configs.recommended,
-    ...fixupConfigRules([
-        {
-            ...react,
-            settings: {
-                react: {version: 'detect'},
+    {
+        files: ['**!/!*.{js,jsx,ts,tsx}'],
+        plugins: {
+            '@typescript-eslint': typescript,
+            'react': react,
+        },
+        languageOptions: {
+            parser: typescriptParser,
+            parserOptions: {
+                ecmaVersion: 'latest',
+                sourceType: 'module',
+                ecmaFeatures: {
+                    jsx: true,
+                },
+                project: './tsconfig.json',
             },
         },
-        reactJsx,
-    ]),
-    {
-        plugins: {
-            'react-hooks': fixupPluginRules(reactHooks),
+        settings: {
+            react: {
+                version: 'detect',
+            },
         },
         rules: {
-            ...reactHooks.configs.recommended.rules,
+            // TypeScript правила
+            '@typescript-eslint/no-unused-vars': 'error',
+            '@typescript-eslint/no-explicit-any': 'warn',
+            '@typescript-eslint/explicit-module-boundary-types': 'error',
+            '@typescript-eslint/no-non-null-assertion': 'warn',
+
+            // React правила
+            'react/jsx-uses-react': 'error',
+            'react/jsx-uses-vars': 'error',
+            'react/prop-types': 'error',
+            'react/jsx-key': 'error',
+            'react/jsx-no-duplicate-props': 'error',
+            'react/no-unused-state': 'error',
+
+            // Общие правила
+            'no-console': 'warn',
+            'no-unused-expressions': 'error',
+            'no-unreachable': 'error',
         },
     },
-    {ignores: ['dist/']},
 ];

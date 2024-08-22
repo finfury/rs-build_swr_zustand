@@ -1,8 +1,6 @@
 import React from 'react'
 import styles from './PostCard.module.scss'
 import {Post} from '@/entities/post.ts'
-import Button from '@/components/Button/Button.tsx'
-import useSWR from 'swr'
 
 
 interface Props {
