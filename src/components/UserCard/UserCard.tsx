@@ -32,7 +32,7 @@ const UserCard = ({user}: Props) => {
 			</p>
 			<Button
 				text='Удалить'
-				variant='outlined'
+				variant='fill'
 				type='button'
 				onClick={() => removeUserHandler(user)}
 			/>

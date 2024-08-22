@@ -2,28 +2,31 @@
 	padding: 10px 30px;
 	border: 2px solid transparent;
 	border-radius: 30px;
-}
 
-.button.outlined {
-	border: 2px solid var(--orange);
-	color: var(--black);
-}
-
-.button.fill {
-	background-color: var(--orange);
-	color: var(--black);
-}
-
-@media (hover: hover) {
-	.button {
-		transition: all 0.2s ease;
+	&.outlined {
+		border: 2px solid var(--orange);
+		color: var(--black);
 	}
-	.button.fill:hover {
+
+	&.fill {
 		background-color: var(--orange);
 		color: var(--black);
 	}
-	.button.outlined:hover {
-		border: 2px solid var(--orange);
-		color: var(--black);
+
+	@media (hover: hover) {
+		& {
+			transition: all 0.2s ease;
+
+			&.outlined:hover {
+				border: 2px solid var(--green);
+				background-color: var(--green);
+				color: var(--black);
+			}
+
+			&.fill:hover {
+				background-color: var(--green);
+				color: var(--black);
+			}
+		}
 	}
 }
