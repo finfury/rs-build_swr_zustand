@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
 
 # Запуск скриптов
-# yarn pretty
+
+# lint-staged
+yarn pretty

@@ -14,7 +14,8 @@
     "allowImportingTsExtensions": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@/styles/*": ["./src/shared/static/styles/*"]
+      "@/styles/*": ["./src/shared/static/styles/*"],
+      "@/images/*": ["./src/shared/static/images/*"]
     },
     "rootDir": "src",
     "allowSyntheticDefaultImports": true

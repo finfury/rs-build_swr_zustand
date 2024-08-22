@@ -1,0 +1,39 @@
+.user {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	grid-gap: 20px;
+	max-width: 400px;
+	min-width: 150px;
+	background-color: var(--white);
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+	padding: 30px;
+}
+
+.image {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+}
+
+.name {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	font-weight: bold;
+	text-align: center;
+	@include adaptive-font(16, 30, $max-width, $min-width);
+	flex: 1 1 auto;
+}
+
+.text {
+	font-family: 'Somic', sans-serif;
+	text-align: justify-all;
+	@include adaptive-font(12, 21, $max-width, $min-width);
+}

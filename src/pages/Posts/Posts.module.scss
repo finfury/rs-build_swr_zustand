@@ -1,4 +1,4 @@
-.main {
+.posts {
 }
 
 .section {
@@ -14,8 +14,9 @@
 	margin-bottom: 30px;
 }
 
-.users {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	grid-gap: 30px;
+.list {
+}
+
+.button {
+	margin-top: 20px;
 }

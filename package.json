@@ -10,13 +10,21 @@
         "pretty": "yarn format && yarn lint",
         "prepare": "husky"
     },
+    "lint-staged": {
+        "*.{js,ts,jsx,tsx}": [
+            "yarn pretty",
+            "git add"
+        ]
+    },
     "dependencies": {
+        "axios": "^1.7.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "react-router-dom": "^6.26.1"
+        "react-router-dom": "^6.26.1",
+        "swr": "^2.2.5",
+        "zustand": "^4.5.5"
     },
     "devDependencies": {
-        "clsx": "^2.1.1",
         "@eslint/compat": "^1.1.1",
         "@eslint/js": "^9.9.0",
         "@rsbuild/core": "1.0.1-beta.15",
@@ -25,6 +33,7 @@
         "@types/node": "^22.4.2",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
+        "clsx": "^2.1.1",
         "dotenv": "^16.4.5",
         "eslint": "^9.9.0",
         "eslint-plugin-react": "^7.35.0",
